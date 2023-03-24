@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sự kiện bàn phím</title>
+</head>
+<body onload="keyEvent()">
+<img src="picture/480px-Npc_zoom_3992436000_01.png" id="nobita" style="position: absolute; left: 0; top: 0" height="400"
+     width="480">
+<script>
+    let nobi = document.getElementById('nobita');
+
+    function moveUp() {
+        nobi.style.top = parseInt(nobi.style.top) - 5 + 'px';
+    }
+
+    function moveDown() {
+        nobi.style.top = parseInt(nobi.style.top) + 5 + 'px';
+    }
+
+    function moveLeft() {
+        nobi.style.left = parseInt(nobi.style.left) - 5 + 'px';
+    }
+
+    function moveRight() {
+        nobi.style.left = parseInt(nobi.style.left) + 5 + 'px';
+    }
+
+    function moveSelection(nbta) {
+        switch (nbta.keyCode) {
+            case 38:
+                moveUp();
+                break;
+            case 40:
+                moveDown();
+                break;
+            case 37:
+                moveLeft();
+                break;
+            case 39:
+                moveRight();
+                break;
+        }
+    }
+
+    function keyEvent() {
+        window.addEventListener("keydown", moveSelection);
+    }
+</script>
+</body>
+</html>
